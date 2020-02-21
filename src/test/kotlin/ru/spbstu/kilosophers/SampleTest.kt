@@ -3,10 +3,10 @@ package ru.spbstu.kilosophers
 import kotlinx.coroutines.*
 import ru.spbstu.kilosophers.atomic.AtomicForkBox
 import ru.spbstu.kilosophers.concurrent.ConcurrentForkBox
-import ru.spbstu.kilosophers.sample.SampleUniversity
+import ru.spbstu.kilosophers.part1.UniversityPart1
+import kotlin.test.Test
 import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
-import kotlin.test.Test
 
 class SampleTest {
 
@@ -43,13 +43,23 @@ class SampleTest {
 
     }
 
+//    @Test
+//    fun testSampleKilosopherWithConcurrentFork() {
+//        doTest(SampleUniversity, ConcurrentForkBox, kilosopherCount = 5, duration = 20000)
+//    }
+//
+//    @Test
+//    fun testSampleKilosopherWithAtomicFork() {
+//        doTest(SampleUniversity, AtomicForkBox, kilosopherCount = 5, duration = 20000)
+//    }
+
     @Test
-    fun testSampleKilosopherWithConcurrentFork() {
-        doTest(SampleUniversity, ConcurrentForkBox, kilosopherCount = 5, duration = 20000)
+    fun testPart1WithConcurrentFork() {
+        doTest(UniversityPart1, ConcurrentForkBox, kilosopherCount = 15, duration = 200000)
     }
 
     @Test
-    fun testSampleKilosopherWithAtomicFork() {
-        doTest(SampleUniversity, AtomicForkBox, kilosopherCount = 5, duration = 20000)
+    fun testPart1WithAtomicFork() {
+        doTest(UniversityPart1, AtomicForkBox, kilosopherCount = 5, duration = 20000)
     }
 }
